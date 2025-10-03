@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Florencia Segretti - Diseñadora Integral</title>
+    <link href="style.css" rel="stylesheet"/>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <h1>FLORENCIA SEGRETTI</h1>
+            <p>Diseñadora Integral</p>
+        </header>
+
+        <!-- Navigation -->
+        <nav class="nav">
+            <a href="index.html">Portafolio</a>
+            <a href="about.hmtl"class="active">Sobre mí</a>
+        </nav>
+
+        <!-- About Section -->
+        <section class="gallery">
+            <div class="container">
+                <h2>Sobre mí</h2>
+
+                <img src="fotoFlo1.jpg">
+
+
+                <p>
+                    Soy Florencia Segretti, diseñadora integral egresada de la Pontifica Universidad Católica de Chile con especialización en las areas de diseño editorial, branding, diseño gráfico y comunicación visual
+        
+                </p>
+                <p>
+                    Mi objetivo es darle carácter a todos los proyectos que realizo mediante técnicas gráficas acordes a las estéticas que el proyecto pide, destacando las cualidades más interesantes de cada uno, buscando llamar la atención del cliente como la del público objetivo.
+                </p>
+                <p>
+                    Durante mis años de estudio colaboré con diferentes contraparte, entre estas podemos destacar la participación de la marca P&G, el MIT, Ladera Sur, PEW entre otras.
+                </p>
+            </div>
+
+   <div class="chart-container" style="max-width: 900px; margin: 60px auto;">
+    <canvas id="bubbleChart"></canvas>
+  </div>
+</section>
+
+<canvas id="bubbleChart"></canvas>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+const proyectos = [
+  { nombre: "Pigmento de cúrcuma", año: 2025 },
+  { nombre: "Chile en palito", año: 2024.4 },
+  { nombre: "AZIMUT", año: 2024 },
+  { nombre: "Kupsha", año: 2023.4 },
+  { nombre: "BIOCO", año: 2024.6 },
+  { nombre: "Filogénico", año: 2023 },
+  { nombre: "Desconocido", año: 2025 },
+  { nombre: "Yo recuerdo", año: 2024.8 }
+];
+
+const ctx = document.getElementById('bubbleChart');
+
+new Chart(ctx, {
+  type: 'bubble',
+  data: {
+    datasets: [{
+      label: 'Proyectos',
+      data: proyectos.map((p, i) => ({
+        x: p.año,
+        y: i + 1,
+        r: 10,
+        nombre: p.nombre   
+      })),
+      backgroundColor: 'rgba(75, 192, 192, 0.6)'
+    }]
+  },
+  options: {
+    scales: {
+      x: { title: { display: true, text: 'Momento en que se realizó el proyecto' } },
+      y: { display: false }
+    },
+    plugins: {
+      tooltip: {
+        callbacks: {
+          label: function(context) {
+            return context.raw.nombre;  
+          }
+        }
+      }
+    }
+  }
+});
+</script>
+
+</script>
+
+
+</script>
+
+        <!-- Footer -->
+
+        <footer class="footer">
+            <p>© 2025 Florencia Segretti. Todos los derechos reservados.</p>
+            <div class="social-links">
+                <a href="https://www.behance.net/florencsegrett">Behance</a>
+                <a href="https://www.linkedin.com/in/florencia-segretti-riquelme-36aa7b35a/">LinkedIn</a>
+            </div>
+
+        </footer>
+    </div>
+    <script src="portafolio.js"></script>
+</body>
+</html>
